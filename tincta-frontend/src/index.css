@@ -1,0 +1,81 @@
+
+:root {
+
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  --futura-book: "futura-pt", sans-serif;
+  --futura-book-weight: 400;
+  --futura-book-style: normal;
+
+  --futura-book-oblique: "futura-pt", sans-serif;
+  --futura-book-oblique-weight: 400;
+  --futura-book-oblique-style: italic;
+
+  --futura-heavy: "futura-pt", sans-serif;
+  --futura-heavy-weight: 700;
+  --futura-heavy-style: normal;
+
+  --futura-heavy-oblique: "futura-pt", sans-serif;
+  --futura-heavy-oblique-weight: 700;
+  --futura-heavy-oblique-style: italic;
+
+  --futura-bold: "futura-pt-bold", sans-serif;
+  --futura-bold-weight: 700;
+  --futura-bold-style: normal;
+
+  --futura-bold-oblique: "futura-pt-bold", sans-serif;
+  --futura-bold-oblique-weight: 700;
+  --futura-bold-oblique-style: italic;
+  
+
+ 
+}
+
+
+
+/* Normalize CSS */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  color: #242424;
+  background-color: #f1faee;
+  line-height: 1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+button,
+textarea {
+  font: inherit;
+}
+
+/* Otras propiedades globales */
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+}

@@ -1,0 +1,241 @@
+
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 17px 30px;
+  position: relative;
+  font-family: var(--futura-heavy);
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-left {
+  margin-right: auto;
+  margin-left: 15%;
+}
+
+.nav-left img{
+  width: 20px;
+}
+
+.nav-right {
+  margin-left: auto;
+  margin-right: 15%;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.nav-right img{
+  width: 20px;
+}
+
+.nav-right button {
+  background: none;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navbar li:hover {
+  font-family: var(--futura-bold);
+  font-size: 15px;
+}
+
+/* MENÚ LATERAL */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -600px;
+  width: 600px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: right 0.7s ease-in-out;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.side-menu.open {
+  right: 0;
+  z-index: 99;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 70px;
+  width: 100%;
+}
+
+.side-menu ul li {
+  display: flex;
+  padding: 10px 0;
+  
+}
+
+.side-menu a {
+  font-family: var(--futura-book);
+  text-decoration: none;
+  font-size: 23px;
+  color: #242424;
+}
+
+/* BOTÓN CERRAR */
+.close-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+
+.close-button:hover {
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+
+/* OVERLAY OSCURECIDO */
+.overlay {
+  position: fixed;
+  z-index: 97;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(18px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.7s ease-in-out;
+}
+
+/* Cuando el menú está abierto */
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/*GALERIA*/
+.home {
+  display: flex;
+  justify-content: center;
+}
+.gallery {
+  font-family: var(--futura-book);
+  width: 70%;
+  margin: 0 5px;
+}
+
+.view-button {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)); /* Gradiente de opacidad */
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  cursor: pointer;
+  pointer-events: none; /* Inicialmente no clickeable */
+}
+
+
+/* Vista expandida */
+.expanded-view {
+  
+  font-family: var(--futura-book);
+  font-size: 19px;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.expanded-art {
+  width: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.expanded-art img {
+  width: auto;
+  height: 95%;
+}
+
+.art-details {
+  text-align: start;
+  width: 35%;
+  padding: 20px;
+  background: white;
+}
+
+.expanded-view button {
+  position: absolute;
+  margin-top: 10px ;
+  margin-left: 10px;
+  padding: 10px;
+  border: none;
+  color: #242424;
+  cursor: pointer;
+}
+
+.expanded-view button:hover{
+  font-weight: bold;
+}
+
+/*CARD DE OBRAS*/
+.artwork {
+  display: flex;
+  justify-content: center;
+}
+
+/* Ajustes para asegurar que el botón quede dentro de la imagen */
+.artwork-card {
+  position: relative; /* Necesario para que el botón use posiciones absolutas */
+  overflow: hidden;
+  width: 60%;
+  text-align: left;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.artwork-card .art-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.art-info {
+  margin-top: 3px;
+  display: flex;
+  justify-content: space-between;
+}
