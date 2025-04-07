@@ -23,11 +23,14 @@ const Navbar = () => {
                 <ul className="nav-left">
                     <img src={searchLogo} alt="searchLogo" />
                 </ul>
+                <div>
+                    <Link to="/"><img src={logo} alt="Logo" className="logo" /></Link>
+                    <h1 className="title">GALERÍA DE ARTE</h1>
+                </div>
 
-                <Link to="/"><img src={logo} alt="Logo" className="logo" /></Link>
 
                 <ul className="nav-right">
-                    
+
                     <li><button className="menu-button" onClick={toggleMenu}><img src={menuLogo} alt="hamburgerLogo" />MENÚ</button></li>
                 </ul>
             </nav>
