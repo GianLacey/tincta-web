@@ -63,10 +63,16 @@ export default function Gallery() {
             {selectedArtwork && (
                 <div className="modal" onClick={() => setSelectedArtwork(null)}>
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                        <button onClick={() => setSelectedArtwork(null)}>✕</button>
                         <img src={selectedArtwork.image} alt={selectedArtwork.title} />
-                        <h2>{selectedArtwork.title}</h2>
-                        <p>{selectedArtwork.size}</p>
-                        <button onClick={() => setSelectedArtwork(null)}>Cerrar</button>
+                        <div className="art-info">
+                            <h2>{selectedArtwork.title}</h2>
+                            <p>{selectedArtwork.artist}</p>
+                            <p className="art-review">{selectedArtwork.review}</p>
+                            <p>{selectedArtwork.size}</p>
+                        </div>
+
+
                     </div>
                 </div>
             )}

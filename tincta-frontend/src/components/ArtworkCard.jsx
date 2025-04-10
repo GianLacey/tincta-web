@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ArtworkCard = ({ id, title, artist, image, size, onSelect }) => {
+const ArtworkCard = ({ id, title, artist, image, size, onSelect, technic, year, review }) => {
     const [hovered, setHovered] = useState(false);
 
     return (
@@ -34,6 +34,9 @@ const ArtworkCard = ({ id, title, artist, image, size, onSelect }) => {
                 <div className="art-info">
                     <h3 className="art-title">{title}</h3>
                     <p className="art-autor">{artist}</p>
+                    <p>{technic}</p>
+                    <p>{year}</p>
+                    <p>{review}</p>
                     <p className="art-size">{size}</p>
                 </div>
             </div>

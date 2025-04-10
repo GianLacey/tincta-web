@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Gallery from './pages/Gallery';
 import './App.css'
+import Contacto from './pages/Contact';
+
 
 function App() {
   useEffect(() => {
@@ -19,6 +21,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Gallery />} />
+        <Route path='/Contact' element={<Contacto />}/>
         {/* Otras páginas */}
       </Routes>
     </Router>

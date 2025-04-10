@@ -21,7 +21,9 @@ const Navbar = () => {
 
             <nav className="navbar">
                 <ul className="nav-left">
-                    <img src={searchLogo} alt="searchLogo" />
+                    {/* <img src={searchLogo} alt="searchLogo" /> */}
+                    
+                    <li><Link to="/contact">CONTACTO</Link></li>
                 </ul>
                 <div>
                     <Link to="/"><img src={logo} alt="Logo" className="logo" /></Link>
@@ -38,11 +40,11 @@ const Navbar = () => {
             {/* Menú lateral */}
             <div className={`side-menu ${menuOpen ? "open" : ""}`}>
                 <button className="close-button" onClick={toggleMenu}>✕</button>
+                <h2>PRÓXIMAMENTE</h2>
                 <ul>
                     <li><Link to="/about" onClick={toggleMenu}>Sobre Nosotros</Link></li>
                     <li><Link to="/services" onClick={toggleMenu}>Servicios</Link></li>
                     <li><Link to="/blog" onClick={toggleMenu}>Blog</Link></li>
-                    <li><Link to="/contact" onClick={toggleMenu}>Contacto</Link></li>
                 </ul>
             </div>
         </>

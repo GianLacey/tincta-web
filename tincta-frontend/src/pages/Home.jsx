@@ -19,7 +19,7 @@ const Home = () => {
                         <p><strong>Artista:</strong> {selectedArt.artist}</p>
                         <p><strong>Dimensiones:</strong> {selectedArt.size}</p>
                         <p><strong>Valor:</strong> $$$</p>
-                        <p><strong>Explicación:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem perspiciatis odio tempore, voluptas facere obcaecati nobis sequi dignissimos ab optio maxime adipisci quae amet accusamus error cum velit pariatur odit?</p>
+                        <p><strong>Reseña:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem perspiciatis odio tempore, voluptas facere obcaecati nobis sequi dignissimos ab optio maxime adipisci quae amet accusamus error cum velit pariatur odit?</p>
                         
                     </div>
                 </div>

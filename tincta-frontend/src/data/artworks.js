@@ -1,6 +1,3 @@
-import abundancia from "../assets/artworks/abundancia.webp"
-import almaEntonada from "../assets/artworks/alma-entonada.webp"
-
 import luzYcalor from "../assets/artworks/alta calidad jpg/11.webp"
 import luzYcalorA from "../assets/artworks/alta calidad jpg/11a.webp"
 import luzYcalorB from "../assets/artworks/alta calidad jpg/11b.webp"
@@ -70,8 +67,29 @@ import losDurosB from "../assets/artworks/alta calidad jpg/1b.webp"
 export const artworks = [
     { id: 1, title: '"Luz y Calor"', artist: "Tomas Reinaldo Ponti",technic:"Oleo sobre lienzo.", year:"2025.",review:"Es una obra que busca expresar el misterio del mundo, mediante el símbolo como puente a nuevas perspectivas y nuevos diálogos. Una mujer sin cara parada sobre el borde de un arroyo bajo un sol atípico, un poco al costado una cara parece surgir de entre las sombras de un árbol.", image: luzYcalor, size: "70cm x 50cm" },
     { id: 2, title: '"Levantarse"', artist: "Tomas Reinaldo Ponti",technic:"Lápiz y tinta china sobre plástico.", year:"2024.",review:" mediante un lenguaje principalmente figurativo, este dibujo expresa la búsqueda del artista sobre los distintos homínidos que habitaron nuestro planeta, conectando nos con la parte más animal y salvaje de nuestra historia en contraposición a la humanidad civilizada contemporánea.", image: levantarse, size: "" },
-    { id: 3, title: '"Se hace el angelito"', artist: "Nestor Mahmud",technic:"Acrílico, carbón y pastel sobre hoja.", year:"2024.",review:"", image:seHaceElAngelito , size: "110cm x 80cm" },
+    { id: 3, title: '"Se hace el angelito"', artist: "Nestor Mahmud",technic:"Acrílico, carbón y pastel sobre hoja.", year:"2024.",review:"", image:seHaceElAngelito , size: "118cm x 82cm" },
+    { id: 4, title: '"El 4 Ojos"', artist: "Nestor Mahmud",technic:"Acrílico, carbón y pastel sobre hoja.", year:"2024.",review:"", image:el4Ojos , size: "110cm x 74cm" },
+
+    { id: 5, title: '"Tus fueguitos te alimentan"', artist: "Nestor Mahmud",technic:"Acrílico sobre madera.", year:"2024.",review:"", image:tusFueguitos , size: "146cm x 100cm" },
     
+    { id: 6, title: '"Toque y mambo"', artist: "Nestor Mahmud",technic:"Acrílico sobre hoja.", year:"2024.",review:"", image:toqueYmambo , size: "70cm x 49,5cm" },
     
+    { id: 7, title: '"Polucionados en plena avenida"', artist: "Nestor Mahmud",technic:"Tinta sobre tela.", year:"2017.",review:"", image:polucinados , size: "184cm x 145cm" },
+
+    { id: 8, title: '"Polucionados 33"', artist: "Nestor Mahmud",technic:"Tinta sobre madera entelada", year:"2016.",review:"", image:polucinados33 , size: "152cm x 192,5cm" },
+
+    { id: 9, title: '"El infierno esta encantador"', artist: "Nestor Mahmud",technic:"Tinta y acrílico sobre papel", year:"2023.",review:"", image:infiernoEncantador , size: "80cm x 110cm" },
+
+    { id: 10, title: '"Todos arriba del Arca"', artist: "Nestor Mahmud",technic:"Tinta, pastel y acrílico sobre hoja.", year:"2024.",review:"", image:arribaDelArca , size: "77,5cm x 104cm" },
+
+    { id: 11, title: '"Ranchitos del norte"', artist: "Nestor Mahmud",technic:"Acrílico sobre tela", year:"2020.",review:"", image:ranchitosDelNorte, size: "184cm x 140cm" },
+
+    { id: 12, title: '"Los duros"', artist: "Nestor Mahmud",technic:"Acrílico sobre tela", year:"2019.",review:"", image:losDuros , size: "75cm x 60cm" },
+
+    { id: 13, title: '"Mujer nocturna"', artist: "Alejo Bianco",technic:"Tiza sobre papel.", year:"",review:"", image:mujerNocturna , size: "73cm x 53cm" },
+
+    { id: 14, title: '""', artist: "Alejo Bianco",technic:"Tiza pastel sobre papel.", year:"2018",review:"", image:siVieras , size: "82cm x 63,5cm" },
+
+    { id: 15, title: '"Mujer roja"', artist: "Alejo Bianco",technic:"Óleo sobre cartón.", year:"",review:"", image:mujerRoja , size: "74cm x 58cm" },
     
   ];
