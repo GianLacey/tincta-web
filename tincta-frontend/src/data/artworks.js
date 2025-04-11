@@ -65,8 +65,8 @@ import losDurosB from "../assets/artworks/alta calidad jpg/1b.webp"
 
 
 export const artworks = [
-    { id: 1, title: '"Luz y Calor"', artist: "Tomas Reinaldo Ponti",technic:"Oleo sobre lienzo.", year:"2025.",review:"Es una obra que busca expresar el misterio del mundo, mediante el símbolo como puente a nuevas perspectivas y nuevos diálogos. Una mujer sin cara parada sobre el borde de un arroyo bajo un sol atípico, un poco al costado una cara parece surgir de entre las sombras de un árbol.", image: luzYcalor, size: "70cm x 50cm" },
-    { id: 2, title: '"Levantarse"', artist: "Tomas Reinaldo Ponti",technic:"Lápiz y tinta china sobre plástico.", year:"2024.",review:" mediante un lenguaje principalmente figurativo, este dibujo expresa la búsqueda del artista sobre los distintos homínidos que habitaron nuestro planeta, conectando nos con la parte más animal y salvaje de nuestra historia en contraposición a la humanidad civilizada contemporánea.", image: levantarse, size: "" },
+    
+    { id: 2, title: '"Levantarse"', artist: "Tomas Reinaldo Ponti",technic:"Lápiz y tinta china sobre plástico.", year:"2024.",review:" mediante un lenguaje principalmente figurativo, este dibujo expresa la búsqueda del artista sobre los distintos homínidos que habitaron nuestro planeta, conectando nos con la parte más animal y salvaje de nuestra historia en contraposición a la humanidad civilizada contemporánea.", image: levantarse, size: "116,5cm x 72,5cm" },
     { id: 3, title: '"Se hace el angelito"', artist: "Nestor Mahmud",technic:"Acrílico, carbón y pastel sobre hoja.", year:"2024.",review:"", image:seHaceElAngelito , size: "118cm x 82cm" },
     { id: 4, title: '"El 4 Ojos"', artist: "Nestor Mahmud",technic:"Acrílico, carbón y pastel sobre hoja.", year:"2024.",review:"", image:el4Ojos , size: "110cm x 74cm" },
 

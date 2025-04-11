@@ -1,50 +1,56 @@
 import { useState, useRef, useEffect } from "react";
 import "../styles/Gallery.css";
-
 import { artworks } from "../data/artworks";
 
 export default function Gallery() {
+    const [currentIndex, setCurrentIndex] = useState(0);
     const [selectedArtwork, setSelectedArtwork] = useState(null);
     const galleryRef = useRef(null);
 
     const handleWheel = (e) => {
-        if (galleryRef.current) {
-            e.preventDefault();
-            galleryRef.current.scrollLeft += e.deltaY;
+        if (!galleryRef.current) return;
+        e.preventDefault();
+
+        const gallery = galleryRef.current;
+        const artworksElements = gallery.querySelectorAll(".artwork");
+        const artworkWidth = artworksElements[0]?.offsetWidth || 0;
+        const gap = parseInt(getComputedStyle(gallery).gap || 0);
+
+        const totalItems = artworks.length;
+
+        let newIndex = currentIndex;
+
+        if (e.deltaY > 0 && currentIndex < totalItems - 1) {
+            newIndex = currentIndex + 1;
+        } else if (e.deltaY < 0 && currentIndex > 0) {
+            newIndex = currentIndex - 1;
         }
+
+        setCurrentIndex(newIndex);
+
+        const scrollTo = newIndex * (artworkWidth + gap) - (gallery.offsetWidth / 2 - artworkWidth / 2);
+
+        gallery.scrollTo({
+            left: scrollTo,
+            behavior: "smooth",
+        });
     };
 
     useEffect(() => {
         const gallery = galleryRef.current;
         if (!gallery) return;
 
-        const handleInfiniteScroll = () => {
-            // Si está al final del scroll, vuelve al inicio
-            if (gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth) {
-                gallery.scrollLeft = 0;
-            }
-            // Si está al inicio del scroll, va al final
-            else if (gallery.scrollLeft <= 0) {
-                gallery.scrollLeft = gallery.scrollWidth;
-            }
-        };
-
         gallery.addEventListener("wheel", handleWheel, { passive: false });
 
-        // Evento de scroll infinito
-        gallery.addEventListener("scroll", handleInfiniteScroll);
-
-        // Limpiar eventos al desmontar
         return () => {
             gallery.removeEventListener("wheel", handleWheel);
-            gallery.removeEventListener("scroll", handleInfiniteScroll);
         };
-    }, []);
+    }, [currentIndex]);
 
     return (
         <div>
-            <div className="gallery-container" ref={galleryRef} onWheel={handleWheel}>
-                {artworks.map((artwork) => (
+            <div className="gallery-container" ref={galleryRef}>
+                {artworks.map((artwork, index) => (
                     <div
                         key={artwork.id}
                         className="artwork"
@@ -71,8 +77,6 @@ export default function Gallery() {
                             <p className="art-review">{selectedArtwork.review}</p>
                             <p>{selectedArtwork.size}</p>
                         </div>
-
-
                     </div>
                 </div>
             )}
