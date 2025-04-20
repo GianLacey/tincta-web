@@ -1,8 +1,18 @@
 {
+
   "dependencies": {
+
+    "framer-motion": "^12.7.4",
+
     "mongodb": "^6.13.1"
+
   },
+
   "devDependencies": {
+
     "gh-pages": "^6.3.0"
+
   }
+
 }
+

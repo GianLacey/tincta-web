@@ -82,12 +82,12 @@ const Navbar = () => {
                         <p className="info-label">Sitio web:</p>
                         <p className="info-contact">
                             <a
-                                href="https://www.tincta.com"
+                                href="https://www.tincta.art"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="info-link"
                             >
-                                www.tincta.com
+                                www.tincta.art
                             </a>
                         </p>
                     </div>
