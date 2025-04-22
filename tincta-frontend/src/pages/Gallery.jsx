@@ -204,15 +204,17 @@ export default function Gallery() {
                     key={artwork.id} 
                     className={`artwork ${centeredArtwork?.id === artwork.id ? 'show-info' : ''}`}
                   >
+                        
+                        <div className="img-container">
+                            <img src={artwork.image} alt={artwork.title} />
+                        </div>
+
                         <div className="info">
                             <div className="info-detail">
                                 <p className="title">{artwork.title}</p>
                                 <p className="size">{artwork.size}</p>
                             </div>
                             <button onClick={() => openArtworkModal(artwork)}>Ver más</button>
-                        </div>
-                        <div className="img-container">
-                            <img src={artwork.image} alt={artwork.title} />
                         </div>
                     </div>
                 ))}
