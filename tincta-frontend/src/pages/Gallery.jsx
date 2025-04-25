@@ -230,6 +230,11 @@ export default function Gallery() {
                     >
                         <div className="modal-body">
                             <div className="image-gallery">
+                                
+                                <div className="main-image">
+                                    <img src={mainImage} alt={selectedArtwork.title} />
+                                </div>
+
                                 <div className="thumbnails">
                                     {[selectedArtwork.image, selectedArtwork.imageA, selectedArtwork.imageB]
                                         .filter(Boolean)
@@ -242,9 +247,6 @@ export default function Gallery() {
                                                 onClick={() => setMainImage(img)}
                                             />
                                         ))}
-                                </div>
-                                <div className="main-image">
-                                    <img src={mainImage} alt={selectedArtwork.title} />
                                 </div>
                             </div>
                         </div>
