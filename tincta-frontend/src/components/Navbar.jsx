@@ -50,9 +50,9 @@ const Navbar = () => {
 
             <div className={`contacto-container ${contactOpen ? "open" : ""}`}>
 
-                <button className="close-button" onClick={toggleContact}>✕</button>
+                <button className="close-contact" onClick={toggleContact}>✕</button>
                 <h1 className="contacto-heading">CONTACTO</h1>
-                <div>
+                <div className="info-c">
                     <div className="info-container">
                         <p className="info-label">Nombre:</p>
                         <p className="info-contact">Guido Bannon</p>

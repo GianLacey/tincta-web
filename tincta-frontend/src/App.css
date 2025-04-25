@@ -876,6 +876,9 @@ button {
     padding: 2px 25px;
   }
 
+  .navbar .title {
+    font-size: 15px;
+  }
   .nav-left,
   .nav-right {
     margin: 10px 0;
@@ -884,8 +887,13 @@ button {
     align-items: center;
   }
 
+
+  .nav-left img {
+    display: block;
+    opacity: 70%;
+  }
   .logo {
-    height: 40px;
+    height: 55px;
   }
 
   .contact-button img {
@@ -900,6 +908,149 @@ button {
     display: none;
   }
 
+
+  /*CONTACT OPEN*/
+
+.contacto-container {
+  top: -600px;
+  left: 0;
+  width: 480px;
+  height: 50%;
+  background-color: white;
+  align-items: left;
+  padding-left: 50px;
+  transition: top 0.7s ease-in-out;
+}
+
+.contacto-container.open {
+  top: 0;
+  z-index: 999;
+
+}
+
+.info-c {
+  padding-top: 10px;
+}
+.contacto-heading {
+  font-family: var(--futura-book);
+  font-weight: 500;
+  font-size: 24px;
+  margin-top: 10px;
+  text-align: left;
+  color: #333;
+}
+
+.close-contact {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-bottom: 20px;
+}
+
+.close-contact:hover {
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.info-container {
+  display: flex;
+  margin-bottom: 10px;
+  text-align: c;
+}
+
+.info-label {
+  margin-right: 10px;
+  min-width: 100px;
+  display: block;
+}
+
+.info-contact {
+  position: relative;
+  margin: 0;
+  display: block;
+  color: #242424;
+  opacity: 1;
+}
+
+.info-link {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+
+/* MENÚ LATERAL */
+.side-menu {
+  top: -600px;
+  right: 0;
+  width: 480px;
+  height: 50%;
+  transition: top 0.7s ease-in-out;
+}
+
+.side-menu.open {
+  top: 0;
+}
+
+.side-menu a {
+  font-size: 17px;
+  
+}
+
+.side-menu ul {
+  padding-top: 30px;
+}
+
+/* BOTÓN CERRAR */
+.close-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+
+
+.close-button:hover {
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+
+/* OVERLAY OSCURECIDO */
+.overlay {
+  position: fixed;
+  z-index: 97;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(18px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.7s ease-in-out;
+}
+
+/* Cuando el menú está abierto */
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+  z-index: 998;
+}
+
+
+  /*GALERY*/
   .gallery-container {
     display: flex;
     align-items: center;
@@ -957,7 +1108,7 @@ button {
     letter-spacing: 0px;
     display: block;
     align-items: baseline;
-    width: 140%;
+    width: 90%;
     background: rgba(255, 255, 255, .8);
     padding: 3px 0;
     color: black;
@@ -1073,10 +1224,10 @@ button {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 480px;
+    height: 100vh;
     background: white;
-    display: flex;
+    display: block;
     align-items: top;
     justify-content: space-between;
     z-index: 999;
@@ -1139,6 +1290,7 @@ button {
   .modal-content.show {
     opacity: 1;
     transform: scale(1);
+    padding: 0;
   }
   
   .modal .art-info {
@@ -1169,16 +1321,15 @@ button {
   }
   
   .modal-images img {
-    max-width: 100%;
+    max-width: 480px;
     height: auto;
     max-height: 80vh;
-    object-fit: contain;
   }
   
   .modal-body {
     display: flex;
-    width: 100%;
-    padding: 0px 0 0 300px;
+    width: 100vh;
+    padding: 0;
     flex-direction: row;
     align-items: flex-start;
   }
@@ -1192,15 +1343,14 @@ button {
   
   .thumbnails {
     display: flex;
-    position: absolute;
-    top: 70px;
+    position: relative;
+    bottom: 70px;
     left: 10%;
     z-index: 99;
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.5rem;
-    max-height: 400px;
-    overflow-y: auto;
-    width: 80px;
+    max-height: 130px;
+    width: 100%;
     height: auto;
     cursor: pointer;
     opacity: 0.6;
@@ -1218,7 +1368,7 @@ button {
   .main-image img {
     width: auto;
     margin-top: 40px;
-    max-width: 1100px;
+    max-width: 480px;
     max-height: 820px;
     object-fit: contain;
   }
