@@ -13,9 +13,9 @@ export default function Gallery() {
 
     // Referencia al contenedor de la galería para manipular scroll y dimensiones
     const galleryRef = useRef(null);
-    
+
     //Artwork centrado
-    const [centeredArtwork, setCenteredArtwork] = useState(null); 
+    const [centeredArtwork, setCenteredArtwork] = useState(null);
 
 
     // Evento que maneja el scroll horizontal con el mouse (ruedita)
@@ -67,7 +67,7 @@ export default function Gallery() {
         };
 
         // Esto no tiene efecto porque está después del return
-        updateArtworkStyles(); 
+        updateArtworkStyles();
     }, [currentIndex]);
 
     // Abre el modal de una obra y setea su imagen principal
@@ -101,33 +101,33 @@ export default function Gallery() {
     };
 
     // Aplica opacidad, escala y z-index dinámico en base a qué tan lejos está cada obra del centro de la galería
-    
+
     const updateArtworkStyles = () => {
         if (!galleryRef.current) return;
-    
+
         const gallery = galleryRef.current;
         const artworksElements = gallery.querySelectorAll(".artwork");
         const galleryRect = gallery.getBoundingClientRect();
         const galleryCenter = galleryRect.left + galleryRect.width / 2;
-    
+
         let closestEl = null;
         let minDistance = Infinity;
         let closestIndex = -1;
-    
+
         artworksElements.forEach((el, index) => {
             const rect = el.getBoundingClientRect();
             const elementCenter = rect.left + rect.width / 2;
-    
+
             const distance = Math.abs(galleryCenter - elementCenter);
-    
+
             // Escala y opacidad dinámica
             const scale = Math.max(0.8, 1 - distance / 800);
             const opacity = Math.max(0.4, 1 - distance / 600);
-    
+
             el.style.transform = `scale(${scale})`;
             el.style.opacity = opacity;
             el.style.zIndex = Math.round(opacity * 100);
-    
+
             // Detectar el más cercano
             if (distance < minDistance) {
                 minDistance = distance;
@@ -135,7 +135,7 @@ export default function Gallery() {
                 closestIndex = index;
             }
         });
-    
+
         if (closestIndex !== -1) {
             setCenteredArtwork(artworks[closestIndex]); // Obra que está más al centro
         }
@@ -198,67 +198,70 @@ export default function Gallery() {
     // 🎨 Render de la galería
     return (
         <div>
-            <div className="gallery-container" ref={galleryRef}>
-                {artworks.map((artwork, index) => (
-                    <div 
-                    key={artwork.id} 
-                    className={`artwork ${centeredArtwork?.id === artwork.id ? 'show-info' : ''}`}
-                  >
-                        
-                        <div className="img-container">
-                            <img src={artwork.image} alt={artwork.title} />
-                        </div>
+            <div className="main-gallery">
+                <div className="gallery-container" ref={galleryRef}>
+                    {artworks.map((artwork, index) => (
+                        <div
+                            key={artwork.id}
+                            className={`artwork ${centeredArtwork?.id === artwork.id ? 'show-info' : ''}`}
+                        >
 
-                        <div className="info">
-                            <div className="info-detail">
-                                <p className="title">{artwork.title}</p>
-                                <p className="size">{artwork.size}</p>
+                            <div className="img-container">
+                                <img src={artwork.image} alt={artwork.title} />
                             </div>
-                            <button onClick={() => openArtworkModal(artwork)}>Ver más</button>
-                        </div>
-                    </div>
-                ))}
-            </div>
 
-            {/* Modal de detalle de la obra seleccionada */}
-            {selectedArtwork && (
-                <div className={`modal ${isClosing ? 'closing' : ''}`}>
-                    <button onClick={handleCloseWithAnimation}>Volver</button>
-                    <div
-                        className={`modal-content ${showModalContent ? "show" : ""}`}
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <div className="modal-body">
-                            <div className="image-gallery">
-                                
-                                <div className="main-image">
-                                    <img src={mainImage} alt={selectedArtwork.title} />
+                            <div className="info">
+                                <div className="info-detail">
+                                    <p className="title">{artwork.title}</p>
+                                    <p className="size">{artwork.size}</p>
                                 </div>
-
-                                <div className="thumbnails">
-                                    {[selectedArtwork.image, selectedArtwork.imageA, selectedArtwork.imageB]
-                                        .filter(Boolean)
-                                        .map((img, index) => (
-                                            <img
-                                                key={index}
-                                                src={img}
-                                                alt={`${selectedArtwork.title} ${index}`}
-                                                className={`thumbnail ${mainImage === img ? "active" : ""}`}
-                                                onClick={() => setMainImage(img)}
-                                            />
-                                        ))}
-                                </div>
+                                <button onClick={() => openArtworkModal(artwork)}>Ver más</button>
                             </div>
                         </div>
-                    </div>
-                    <div className="art-info">
-                        <h2>{selectedArtwork.title}</h2>
-                        <p>{selectedArtwork.artist}</p>
-                        <p>{selectedArtwork.size}</p>
-                        <p className="art-review">{selectedArtwork.review}</p>
-                    </div>
+                    ))}
                 </div>
-            )}
-        </div>
+            </div>
+            {/* Modal de detalle de la obra seleccionada */}
+            {
+                selectedArtwork && (
+                    <div className={`modal ${isClosing ? 'closing' : ''}`}>
+                        <button onClick={handleCloseWithAnimation}>Volver</button>
+                        <div
+                            className={`modal-content ${showModalContent ? "show" : ""}`}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <div className="modal-body">
+                                <div className="image-gallery">
+
+                                    <div className="main-image">
+                                        <img src={mainImage} alt={selectedArtwork.title} />
+                                    </div>
+
+                                    <div className="thumbnails">
+                                        {[selectedArtwork.image, selectedArtwork.imageA, selectedArtwork.imageB]
+                                            .filter(Boolean)
+                                            .map((img, index) => (
+                                                <img
+                                                    key={index}
+                                                    src={img}
+                                                    alt={`${selectedArtwork.title} ${index}`}
+                                                    className={`thumbnail ${mainImage === img ? "active" : ""}`}
+                                                    onClick={() => setMainImage(img)}
+                                                />
+                                            ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="art-info">
+                            <h2>{selectedArtwork.title}</h2>
+                            <p>{selectedArtwork.artist}</p>
+                            <p>{selectedArtwork.size}</p>
+                            <p className="art-review">{selectedArtwork.review}</p>
+                        </div>
+                    </div>
+                )
+            }
+        </div >
     );
 }
