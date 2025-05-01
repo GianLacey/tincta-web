@@ -937,7 +937,9 @@ button {
 
   .info-detail {
     display: flex;
+    text-align: left;
     justify-content: space-between;
+    line-height: 15px;
   }
 
   .info .title {
@@ -1164,7 +1166,6 @@ button {
 
   .modal .art-info {
     display: block;
-    justify-content: baseline;
     text-align: left;
     line-height: 16px;
     margin-top: 15px;
@@ -1182,11 +1183,6 @@ button {
     max-width: 40ch;
   }
 
-
-
-  .art-info {
-    width: 100%;
-  }
 
   .modal .contact-info {
     font-family: var(--futura-book);
