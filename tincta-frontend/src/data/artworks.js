@@ -228,7 +228,7 @@ export const artworks = [
     artist: "Tomas Reinaldo Ponti",
     technic: "Lápiz y tinta china sobre plástico.",
     year: "2024.",
-    review: "mediante un lenguaje principalmente figurativo, este dibujo expresa la búsqueda del artista sobre los distintos homínidos que habitaron nuestro planeta, conectando nos con la parte más animal y salvaje de nuestra historia en contraposición a la humanidad civilizada contemporánea.",
+    review: "Mediante un lenguaje principalmente figurativo, este dibujo expresa la búsqueda del artista sobre los distintos homínidos que habitaron nuestro planeta, conectando nos con la parte más animal y salvaje de nuestra historia en contraposición a la humanidad civilizada contemporánea.",
     image: levantarse,
     imageA: levantarseA,
     imageB: levantarseB,

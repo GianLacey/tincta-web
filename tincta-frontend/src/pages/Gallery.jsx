@@ -269,8 +269,11 @@ export default function Gallery() {
                         </div>
                         <div className="art-info">
                             <h2>{selectedArtwork.title}</h2>
-                            <p>{selectedArtwork.artist}</p>
-                            <p>{selectedArtwork.size}</p>
+                            <div className="info-extra">
+                                <p>{selectedArtwork.artist}</p>
+                                <p>{selectedArtwork.size}</p>
+                            </div>
+
                             <p className="art-review">{selectedArtwork.review}</p>
                         </div>
                         <div className="contact-info">
