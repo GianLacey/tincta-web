@@ -1,6 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import { artworks } from "../data/artworks";
 
+import igLogo from "../assets/iconos/instagram-svgrepo-com.svg";
+import telLogo from "../assets/iconos/phone-flip-alt-svgrepo-com.svg"
+import guidoLogo from "../assets/iconos/user-svgrepo-com.svg"
+
 export default function Gallery() {
     // Estado que controla cuál obra está actualmente enfocada en el centro
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -270,13 +274,12 @@ export default function Gallery() {
                             <p className="art-review">{selectedArtwork.review}</p>
                         </div>
                         <div className="contact-info">
-                            <h2>CONTACTO</h2>
                             <div className="info-container">
-                                <p className="info-label">Nombre:</p>
+                                <img className="info-label" src={guidoLogo}></img>
                                 <p className="info-contact">Guido Bannon</p>
                             </div>
                             <div className="info-container">
-                                <p className="info-label">Teléfono:</p>
+                                <img className="info-label" src={telLogo}></img>
                                 <p className="info-contact">
                                     <a href="tel:+542326501198" className="info-link">
                                         (+54) 2326-501198
@@ -284,7 +287,7 @@ export default function Gallery() {
                                 </p>
                             </div>
                             <div className="info-container">
-                                <p className="info-label">Instagram:</p>
+                                <img className="info-label" src={igLogo}></img>
                                 <p className="info-contact">
                                     <a
                                         href="https://instagram.com/tincta.arte"

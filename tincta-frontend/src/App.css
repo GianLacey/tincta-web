@@ -1187,7 +1187,10 @@ button {
 
 
   .modal .contact-info {
+    display: flex;
+    justify-content: center;
     font-family: var(--futura-book);
+    font-size: 14px;
     border-top: 1px solid rgba(36, 36, 36, .5);
     margin-top: 50px;
     text-align: left;
@@ -1195,4 +1198,20 @@ button {
     padding-left: 10px;
   }
 
+  .info-container {
+    margin: 2px 8px 4px;
+    align-items: center;
+  }
+
+.info-container a{
+  color: #242424;
+}
+
+  .contact-info .info-container .info-label {
+    min-width: 10px;
+    display: flex;
+    align-items: center;
+    width: 20px;
+    margin: 0;
+  }
 }
