@@ -1047,16 +1047,18 @@ button {
     top: 0;
     left: 0;
     width: 390px;
-    height: 100vh;
+    min-height: 100%;
+    height: 100%;
     background: white;
     display: block;
     z-index: 999;
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.5s ease, transform 0.8s ease;
+    overflow: hidden;
+    inset: 0;
     overflow-y: auto !important;
   }
-
 
 
   .modal.closing {

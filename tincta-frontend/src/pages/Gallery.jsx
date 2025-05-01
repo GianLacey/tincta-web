@@ -195,6 +195,18 @@ export default function Gallery() {
         };
     }, [selectedArtwork]);
 
+
+    useEffect(() => {
+        if (selectedArtwork) {
+            document.body.style.overflow = 'hidden'; // bloquea scroll global
+        } else {
+            document.body.style.overflow = 'auto'; // lo vuelve a habilitar
+        }
+
+        return () => {
+            document.body.style.overflow = 'auto'; // cleanup por si se desmonta
+        };
+    }, [selectedArtwork]);
     // 🎨 Render de la galería
     return (
         <div>
