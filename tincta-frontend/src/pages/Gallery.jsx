@@ -231,25 +231,23 @@ export default function Gallery() {
                             onClick={(e) => e.stopPropagation()}
                         >
                             <div className="modal-body">
-                                <div className="image-gallery">
 
-                                    <div className="main-image">
-                                        <img src={mainImage} alt={selectedArtwork.title} />
-                                    </div>
+                                <div className="main-image">
+                                    <img src={mainImage} alt={selectedArtwork.title} />
+                                </div>
 
-                                    <div className="thumbnails">
-                                        {[selectedArtwork.image, selectedArtwork.imageA, selectedArtwork.imageB]
-                                            .filter(Boolean)
-                                            .map((img, index) => (
-                                                <img
-                                                    key={index}
-                                                    src={img}
-                                                    alt={`${selectedArtwork.title} ${index}`}
-                                                    className={`thumbnail ${mainImage === img ? "active" : ""}`}
-                                                    onClick={() => setMainImage(img)}
-                                                />
-                                            ))}
-                                    </div>
+                                <div className="thumbnails">
+                                    {[selectedArtwork.image, selectedArtwork.imageA, selectedArtwork.imageB]
+                                        .filter(Boolean)
+                                        .map((img, index) => (
+                                            <img
+                                                key={index}
+                                                src={img}
+                                                alt={`${selectedArtwork.title} ${index}`}
+                                                className={`thumbnail ${mainImage === img ? "active" : ""}`}
+                                                onClick={() => setMainImage(img)}
+                                            />
+                                        ))}
                                 </div>
                             </div>
                         </div>
@@ -258,6 +256,34 @@ export default function Gallery() {
                             <p>{selectedArtwork.artist}</p>
                             <p>{selectedArtwork.size}</p>
                             <p className="art-review">{selectedArtwork.review}</p>
+                        </div>
+                        <div className="contact-info">
+                            <h2>CONTACTO</h2>
+                            <div className="info-container">
+                                <p className="info-label">Nombre:</p>
+                                <p className="info-contact">Guido Bannon</p>
+                            </div>
+                            <div className="info-container">
+                                <p className="info-label">Teléfono:</p>
+                                <p className="info-contact">
+                                    <a href="tel:+542326501198" className="info-link">
+                                        (+54) 2326-501198
+                                    </a>
+                                </p>
+                            </div>
+                            <div className="info-container">
+                                <p className="info-label">Instagram:</p>
+                                <p className="info-contact">
+                                    <a
+                                        href="https://instagram.com/tincta.arte"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="info-link"
+                                    >
+                                        @tincta.arte
+                                    </a>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 )
